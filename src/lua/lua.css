@@ -1,0 +1,275 @@
+.lua-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.lua-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+.lua-sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.lua-sidebar-header span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.lua-aviso {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 0 0 16px;
+}
+
+.lista-exercicios {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.exercicio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.exercicio-item:hover {
+  background: var(--surface2);
+}
+
+.exercicio-ativo {
+  background: var(--surface2);
+  font-weight: 700;
+}
+
+.exercicio-numero {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.exercicio-titulo {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-aprovado {
+  color: var(--success);
+}
+
+.status-reprovado {
+  color: var(--danger);
+}
+
+.status-executando {
+  color: var(--warning);
+}
+
+.lua-main {
+  flex: 1;
+  padding: 24px 32px;
+  overflow-y: auto;
+  max-width: 900px;
+}
+
+.exercicio-numero-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.exercicio-descricao h2 {
+  margin: 6px 0 14px;
+  font-size: 20px;
+}
+
+.exercicio-teoria p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.exercicio-enunciado {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 14px 0;
+}
+
+.exercicio-enunciado strong {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.exercicio-enunciado p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.exercicio-dica {
+  font-size: 13px;
+  color: var(--muted);
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 0 18px;
+}
+
+.lua-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.code-editor-wrapper {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lua-editor-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.exercicio-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface2);
+  color: var(--muted);
+}
+
+.resultado-panel {
+  background: #14172a;
+  color: #e7e9f5;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12px;
+  min-height: 120px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.resultado-vazio {
+  color: #7a8099;
+}
+
+.resultado-linha {
+  margin: 0 0 6px;
+  white-space: pre-wrap;
+}
+
+.resultado-erro {
+  color: #ff8fa3;
+}
+
+.resultado-sucesso {
+  color: #74e0ac;
+}
+
+.resultado-info {
+  color: #8ea1ff;
+}
+
+/* ── Relatório de sessão ──────────────────────── */
+.relatorio-card {
+  max-width: 480px;
+}
+
+.relatorio-placar {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.relatorio-lista {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.relatorio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--surface2);
+}
+
+.relatorio-item-titulo {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.relatorio-dica {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.relatorio-completo {
+  color: var(--success);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .lua-shell {
+    flex-direction: column;
+  }
+  .lua-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
