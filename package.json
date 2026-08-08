@@ -1,0 +1,28 @@
+{
+  "name": "cursos-pratica",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@codemirror/language": "^6.11.4",
+    "@codemirror/legacy-modes": "^6.5.3",
+    "@uiw/react-codemirror": "^4.23.7",
+    "fengari": "^0.1.5",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "~5.7.2",
+    "vite": "^8.0.4"
+  }
+}

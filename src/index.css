@@ -1,0 +1,238 @@
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface2: #f0f2f8;
+  --border: #e2e6f0;
+  --text: #1e2333;
+  --muted: #737a91;
+  --accent: #6c63ff;
+  --accent2: #ff6584;
+  --success: #1fa971;
+  --danger: #e5335c;
+  --warning: #d98a1c;
+  --radius: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+a {
+  color: var(--accent);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ── Cartão central (usado em telas de resumo/relatório dos cursos) ── */
+.id-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: linear-gradient(160deg, #eef1fb 0%, #f4f6fb 60%);
+}
+
+.id-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(30, 35, 51, 0.08);
+  padding: 32px 28px;
+}
+
+.id-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.id-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.id-header h1 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.id-header p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Hub de cursos ─────────────────────────────── */
+.hub-wrapper {
+  min-height: 100vh;
+  padding: 48px 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(160deg, #eef1fb 0%, #f4f6fb 60%);
+}
+
+.hub-conteudo {
+  width: 100%;
+  max-width: 760px;
+}
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.hub-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.hub-header h1 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.hub-header p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.hub-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.curso-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 30px rgba(30, 35, 51, 0.05);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.curso-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(30, 35, 51, 0.09);
+}
+
+.curso-card-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.curso-card-icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.curso-card-titulo {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.curso-card-tag {
+  margin-left: auto;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(108, 99, 255, 0.12);
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.curso-card-descricao {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+
+.curso-card-em-breve {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
+.hub-rodape {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--muted);
+}
