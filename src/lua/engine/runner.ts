@@ -167,11 +167,20 @@ export function executarExercicio(codigo: string, verificacao: Verificacao): Res
   // verificacao.tipo === 'funcao': roda todos os casos de teste (mesmo depois
   // de um caso falhar) para que o aluno veja de uma vez só tudo que ainda
   // precisa ajustar, em vez de descobrir os erros um de cada vez.
+  //
+  // Se o código do aluno tiver algum print() (comum ao debugar), cada linha
+  // impressa durante a chamada de um caso é mostrada junto do resultado
+  // daquele caso — só como apoio visual, não entra na correção.
   const nresultados = verificacao.nresultados ?? 1;
   let todosPassaram = true;
   for (const caso of verificacao.casos) {
+    const inicioSaida = output.length;
     try {
       const resultado = chamarFuncao(L, verificacao.nome, caso.args, nresultados);
+      const impresso = output.slice(inicioSaida);
+      if (impresso.length > 0) {
+        log.push({ tipo: 'info', texto: `print() durante ${caso.descricao}:\n${impresso.join('\n')}` });
+      }
       const obtido: LuaValor = nresultados === 1 ? resultado[0] : resultado;
       const esperado = caso.esperado;
       const bateu = valoresIguais(obtido, esperado);
@@ -185,6 +194,10 @@ export function executarExercicio(codigo: string, verificacao: Verificacao): Res
         });
       }
     } catch (erro) {
+      const impresso = output.slice(inicioSaida);
+      if (impresso.length > 0) {
+        log.push({ tipo: 'info', texto: `print() durante ${caso.descricao}:\n${impresso.join('\n')}` });
+      }
       todosPassaram = false;
       log.push({ tipo: 'erro', texto: `${caso.descricao} → erro: ${mensagemDeErro(erro)}` });
     }
