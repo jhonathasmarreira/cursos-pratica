@@ -34,7 +34,7 @@ export const EXERCICIOS: Exercicio[] = [
       'Escreva um script que declare três variáveis locais — uma string, um number e um boolean — ' +
       'com os valores "Ada", 36 e true (nessa ordem), e imprima cada uma em uma linha separada, ' +
       'usando um print() por variável.',
-    dica: 'local nome = "Ada" / print(nome) — repita o padrão para as outras duas variáveis.',
+    dica: 'local nome = "Ada"\nprint(nome)\n-- repita o padrão para as outras duas variáveis',
     codigoInicial: `-- TODO: declare as variáveis e troque os prints abaixo pelos delas\nprint("implemente aqui")`,
     verificacao: { tipo: 'saida', esperado: ['Ada', '36', 'true'] },
   },
@@ -70,7 +70,7 @@ export const EXERCICIOS: Exercicio[] = [
       'Implemente a função classificarIdade(idade), que retorna uma string: "crianca" para idade ' +
       'menor que 12, "adolescente" para idade entre 12 (inclusive) e 18 (exclusive), "adulto" para ' +
       'idade entre 18 (inclusive) e 60 (exclusive), e "idoso" para 60 ou mais.',
-    dica: 'if idade < 12 then return "crianca" elseif idade < 18 then ... end',
+    dica: 'if idade < 12 then\n  return "crianca"\nelseif idade < 18 then\n  ...\nend',
     codigoInicial: `function classificarIdade(idade)\n  ${pendente('implemente classificarIdade')}\nend`,
     verificacao: {
       tipo: 'funcao',
@@ -98,7 +98,7 @@ export const EXERCICIOS: Exercicio[] = [
     enunciado:
       'Implemente a função somaAte(n), que retorna a soma de todos os inteiros de 1 até n (inclusive), ' +
       'usando um for numérico e uma variável acumuladora — não use a fórmula de Gauss direto.',
-    dica: 'local soma = 0 / for i = 1, n do soma = soma + i end / return soma',
+    dica: 'local soma = 0\nfor i = 1, n do\n  soma = soma + i\nend\nreturn soma',
     codigoInicial: `function somaAte(n)\n  ${pendente('implemente somaAte')}\nend`,
     verificacao: {
       tipo: 'funcao',
@@ -127,7 +127,7 @@ export const EXERCICIOS: Exercicio[] = [
       'Implemente a função filtrarPares(lista), que recebe um array de números e retorna um novo ' +
       'array só com os valores pares, na mesma ordem em que aparecem na lista original.',
     dica:
-      'local resultado = {} / for _, v in ipairs(lista) do if v % 2 == 0 then table.insert(resultado, v) end end',
+      'local resultado = {}\nfor _, v in ipairs(lista) do\n  if v % 2 == 0 then\n    table.insert(resultado, v)\n  end\nend',
     codigoInicial: `function filtrarPares(lista)\n  ${pendente('implemente filtrarPares')}\nend`,
     verificacao: {
       tipo: 'funcao',
@@ -157,7 +157,7 @@ export const EXERCICIOS: Exercicio[] = [
       'para contar quantos itens de cada tipo existem. A função deve retornar um array de 2 números: ' +
       '{ quantidade_de_numbers, quantidade_de_strings }.',
     dica:
-      'local contagem = { number = 0, string = 0 } / for _, v in ipairs(lista) do contagem[type(v)] = contagem[type(v)] + 1 end / return { contagem.number, contagem.string }',
+      'local contagem = { number = 0, string = 0 }\nfor _, v in ipairs(lista) do\n  contagem[type(v)] = contagem[type(v)] + 1\nend\nreturn { contagem.number, contagem.string }',
     codigoInicial: `function contarPorTipo(lista)\n  ${pendente('implemente contarPorTipo')}\nend`,
     verificacao: {
       tipo: 'funcao',
@@ -183,7 +183,7 @@ export const EXERCICIOS: Exercicio[] = [
       'Implemente a função minMax(lista), que recebe um array de números (com pelo menos um ' +
       'elemento) e retorna dois valores: o menor e o maior número da lista, nessa ordem.',
     dica:
-      'local menor, maior = lista[1], lista[1] / for _, v in ipairs(lista) do if v < menor then menor = v end; if v > maior then maior = v end end / return menor, maior',
+      'local menor, maior = lista[1], lista[1]\nfor _, v in ipairs(lista) do\n  if v < menor then menor = v end\n  if v > maior then maior = v end\nend\nreturn menor, maior',
     codigoInicial: `function minMax(lista)\n  ${pendente('implemente minMax')}\nend`,
     verificacao: {
       tipo: 'funcao',
@@ -214,7 +214,7 @@ export const EXERCICIOS: Exercicio[] = [
       'com criarContador() e chame-o 3 vezes, imprimindo (com print) o resultado de cada chamada, ' +
       'uma por linha.',
     dica:
-      'function criarContador() local n = 0 return function() n = n + 1 return n end end / local contador = criarContador() / print(contador())',
+      'function criarContador()\n  local n = 0\n  return function()\n    n = n + 1\n    return n\n  end\nend\n\nlocal contador = criarContador()\nprint(contador())',
     codigoInicial: `-- TODO: defina criarContador, crie um contador e chame-o 3 vezes\nprint("implemente aqui")`,
     verificacao: { tipo: 'saida', esperado: ['1', '2', '3'] },
   },
@@ -236,7 +236,7 @@ export const EXERCICIOS: Exercicio[] = [
       'dividir(a, b) sem quebrar o programa, e retorna dois valores: um boolean (true se deu certo) ' +
       'e o resultado da divisão (se deu certo) ou a mensagem "divisão por zero" (se deu erro).',
     dica:
-      'local ok, resultado = pcall(dividir, a, b) / if ok then return true, resultado else return false, "divisão por zero" end',
+      'local ok, resultado = pcall(dividir, a, b)\nif ok then\n  return true, resultado\nelse\n  return false, "divisão por zero"\nend',
     codigoInicial: `function dividir(a, b)\n  ${pendente('implemente dividir')}\nend\n\nfunction dividirSeguro(a, b)\n  ${pendente('implemente dividirSeguro')}\nend`,
     verificacao: {
       tipo: 'funcao',

@@ -150,6 +150,19 @@
   margin: 0 0 18px;
 }
 
+.exercicio-dica-codigo {
+  margin: 6px 0 0;
+  padding: 10px 12px;
+  background: #14172a;
+  color: #e7e9f5;
+  border-radius: 8px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
 .lua-editor {
   display: flex;
   flex-direction: column;
