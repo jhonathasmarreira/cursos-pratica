@@ -18,9 +18,10 @@ export function ExercicioDescricao({ exercicio }: { exercicio: Exercicio }) {
       </div>
 
       {exercicio.dica && (
-        <p className="exercicio-dica">
-          <strong>Dica:</strong> {exercicio.dica}
-        </p>
+        <div className="exercicio-dica">
+          <strong>Dica:</strong>
+          <pre className="exercicio-dica-codigo">{exercicio.dica}</pre>
+        </div>
       )}
     </div>
   );
